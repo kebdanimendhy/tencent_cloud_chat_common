@@ -239,6 +239,29 @@ class TencentCloudChatMessageSDK {
     return null;
   }
 
+  Future<V2TimMsgCreateInfoResult?> createCustomMessage({
+    required String data,
+    String? desc,
+    String? extension,
+  }) async {
+    final res = await TencentImSDKPlugin.v2TIMManager.getMessageManager().createCustomMessage(
+          data: data,
+          desc: desc ?? '',
+          extension: extension ?? '',
+        );
+    if (res.code == 0) {
+      final messageResult = res.data;
+      return messageResult;
+    }
+    var componentName = runtimeType.toString().replaceAll("TencentCloudChat", "");
+    TencentCloudChat.instance.logInstance.console(
+      componentName: componentName,
+      logs: "createCustomMessage - ${res.desc}",
+      logLevel: TencentCloudChatLogLevel.error,
+    );
+    return null;
+  }
+
   Future<V2TimMsgCreateInfoResult?> createForwardIndividuallyMessage({
     required String msgID,
   }) async {

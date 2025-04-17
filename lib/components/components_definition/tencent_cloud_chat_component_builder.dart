@@ -18,6 +18,10 @@ abstract class TencentCloudChatComponentBuilder {
     TextEditingController? textEditingController,
   }) {}
 
+  getConversationListHeaderBuilder() {}
+
+  getConversationItemSwipeActionsBuilder(V2TimConversation conversation) {}
+
   getConversationItemInfoBuilder(V2TimConversation conversation) {}
 
   getConversationItemContentBuilder(V2TimConversation conversation) {}

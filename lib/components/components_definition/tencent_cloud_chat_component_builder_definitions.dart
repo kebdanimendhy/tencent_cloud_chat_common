@@ -377,6 +377,7 @@ class MessageLayoutBuilderMethods {
   final Function({String? videoPath, dynamic inputElement}) sendVideoMessage;
   final Function({String? filePath, String? fileName, dynamic inputElement}) sendFileMessage;
   final Function({required String voicePath, required int duration}) sendVoiceMessage;
+  final Function({required String data, String? desc, String? extension}) sendCustomMessage;
   final AutoScrollController desktopInputMemberSelectionPanelScroll;
   final ValueChanged<({V2TimGroupMemberFullInfo memberFullInfo, int index})> onSelectMember;
   final void Function() closeSticker;
@@ -387,6 +388,7 @@ class MessageLayoutBuilderMethods {
     required this.sendVideoMessage,
     required this.sendFileMessage,
     required this.sendVoiceMessage,
+    required this.sendCustomMessage,
     required this.desktopInputMemberSelectionPanelScroll,
     required this.onSelectMember,
     required this.closeSticker,

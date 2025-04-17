@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tencent_cloud_chat_common/builders/tencent_cloud_chat_common_builders.dart';
 
 class TencentCloudChatCacheImage extends StatelessWidget {
   final double width;
@@ -40,6 +41,7 @@ class TencentCloudChatCacheImage extends StatelessWidget {
       progressIndicatorBuilder: progressIndicatorBuilder,
       memCacheHeight: memCacheHeight,
       memCacheWidth: memCacheWidth,
+      cacheManager: TencentCloudChatCommonBuilders.networkImageCacheManager,
     );
   }
 }

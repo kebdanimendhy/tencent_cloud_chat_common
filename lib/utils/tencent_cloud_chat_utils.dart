@@ -8,6 +8,7 @@ import 'package:exif/exif.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hash/hash.dart';
 import 'package:path/path.dart' as p;
+import 'package:tencent_cloud_chat_common/builders/tencent_cloud_chat_common_builders.dart';
 import 'package:tencent_cloud_chat_common/tencent_cloud_chat.dart';
 import 'package:tencent_cloud_chat_common/utils/message_custom.dart';
 import 'package:tencent_cloud_chat_common/utils/tencent_cloud_chat_message_calling_message.dart';
@@ -200,6 +201,8 @@ class TencentCloudChatUtils {
     String text = "";
 
     if (message != null) {
+      final summary = TencentCloudChatCommonBuilders.messageSummaryGetter?.call(message: message, messageReceiveOption: messageReceiveOption, unreadCount: unreadCount, draftText: draftText, needStatus: needStatus);
+      if (summary != null) return summary;
       switch (message.elemType) {
         case MessageElemType.V2TIM_ELEM_TYPE_TEXT:
           if (message.textElem != null) {

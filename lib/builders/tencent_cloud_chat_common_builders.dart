@@ -1,7 +1,10 @@
 import 'package:flutter/widgets.dart';
+import 'package:tencent_cloud_chat_common/tencent_cloud_chat.dart';
 import 'package:tencent_cloud_chat_common/widgets/avatar/tencent_cloud_chat_avatar.dart';
 import 'package:tencent_cloud_chat_common/widgets/desktop_popup/operation_key.dart';
 import 'package:tencent_cloud_chat_common/widgets/desktop_popup/tencent_cloud_chat_desktop_popup.dart';
+// ignore: depend_on_referenced_packages
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 typedef CommonAvatarBuilder = Widget? Function({
   required TencentCloudChatAvatarScene scene,
@@ -28,17 +31,29 @@ typedef ShowDesktopPopupFunc = Future<bool> Function({
   VoidCallback? onCancel,
 });
 
+typedef MessageSummaryGetter = String? Function({V2TimMessage? message, int? messageReceiveOption, int? unreadCount, String? draftText, required bool needStatus});
+
 class TencentCloudChatCommonBuilders {
   static CommonAvatarBuilder? _commonAvatarBuilder;
   static ShowDesktopPopupFunc? _showDesktopPopupFunc;
+  static CacheManager? _networkImageCacheManager;
+  static MessageSummaryGetter? _messageSummaryGetter;
 
   TencentCloudChatCommonBuilders({
     CommonAvatarBuilder? commonAvatarBuilder,
     ShowDesktopPopupFunc? showDesktopPopupFunc,
+    CacheManager? networkImageCacheManager,
+    MessageSummaryGetter? messageSummaryGetter,
   }) {
     _commonAvatarBuilder = commonAvatarBuilder;
     _showDesktopPopupFunc = showDesktopPopupFunc;
+    _networkImageCacheManager = networkImageCacheManager;
+    _messageSummaryGetter = messageSummaryGetter;
   }
+
+  static CacheManager? get networkImageCacheManager => _networkImageCacheManager;
+
+  static MessageSummaryGetter? get messageSummaryGetter => _messageSummaryGetter;
 
   static showDesktopPopup({
     TencentCloudChatPopupOperationKey? operationKey,
