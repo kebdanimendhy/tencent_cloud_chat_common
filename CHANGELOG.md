@@ -1,3 +1,7 @@
+# 3.2.1+1
+## General
+* Compatible with audio and video signaling analysis.
+
 # 3.2.1
 ## General
 ### Breaking changes
