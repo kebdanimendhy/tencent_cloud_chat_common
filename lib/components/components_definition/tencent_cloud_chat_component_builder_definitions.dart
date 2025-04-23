@@ -558,6 +558,9 @@ class MessageInputBuilderMethods {
   final Function({String? videoPath, dynamic inputElement}) sendVideoMessage;
   final Function({String? filePath, String? fileName, dynamic inputElement}) sendFileMessage;
   final Function({required String voicePath, required int duration}) sendVoiceMessage;
+  final Function({Offset? offset}) sendImage;
+  final Function({Offset? offset}) sendMediaFromGallery;
+
   final Future<List<V2TimGroupMemberFullInfo>> Function() onChooseGroupMembers;
 
   /// TencentCloudChatMessageController
@@ -579,6 +582,8 @@ class MessageInputBuilderMethods {
     required this.sendImageMessage,
     required this.sendVideoMessage,
     required this.sendFileMessage,
+    required this.sendImage,
+    required this.sendMediaFromGallery,
     required this.messageAttachmentOptionsBuilder,
     required this.sendVoiceMessage,
     required this.onChooseGroupMembers,
