@@ -3,4 +3,5 @@
     "[dart]": {
         "editor.formatOnSave": false
     },
+    "dart.lineLength": 10000
 }

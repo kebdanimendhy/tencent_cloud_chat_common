@@ -147,6 +147,9 @@ export "package:tencent_cloud_chat_sdk/models/v2_tim_user_status.dart";
 export "package:tencent_cloud_chat_sdk/models/v2_tim_value_callback.dart";
 export "package:tencent_cloud_chat_sdk/models/v2_tim_video_elem.dart";
 export 'package:tencent_cloud_chat_sdk/tencent_im_sdk_plugin.dart';
+//
+export 'package:tencent_cloud_chat_common/models/tencent_cloud_chat_v2_tim_sdk_listener.dart';
+
 
 class TencentCloudChat {
   TencentCloudChat._();

@@ -33,7 +33,12 @@ class TencentCloudChatCallbacksTrigger {
   }
 
   void _initDefaultV2TimSDKListener() {
-    defaultV2TimSDKListener ??= V2TimSDKListener(
+    defaultV2TimSDKListener ??= TencentCloudChatV2TimSDKListener(
+      onReceiveNewMessage: (message) {
+        for (final callbacks in callbacksList) {
+          callbacks.onSDKEvent?.handleReceiveNewMessage(message);
+        }
+      },
       onConnecting: () {
         for (final callbacks in callbacksList) {
           callbacks.onSDKEvent?.onConnecting();

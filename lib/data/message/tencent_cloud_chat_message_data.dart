@@ -12,6 +12,7 @@ import 'package:tencent_cloud_chat_common/components/components_definition/tence
 import 'package:tencent_cloud_chat_common/cross_platforms_adapter/tencent_cloud_chat_platform_adapter.dart';
 import 'package:tencent_cloud_chat_common/data/tencent_cloud_chat_data_abstract.dart';
 import 'package:tencent_cloud_chat_common/models/tencent_cloud_chat_models.dart';
+import 'package:tencent_cloud_chat_common/models/tencent_cloud_chat_v2_tim_sdk_listener.dart';
 import 'package:tencent_cloud_chat_common/tencent_cloud_chat.dart';
 import 'package:tencent_cloud_chat_common/utils/tencent_cloud_chat_download_utils.dart';
 import 'package:tencent_cloud_chat_common/utils/tencent_cloud_chat_utils.dart';
@@ -818,6 +819,8 @@ class TencentCloudChatMessageData<T> extends TencentCloudChatDataAB<T> {
         // Update the message list in the data store.
         updateMessageList(userID: newMessage.userID, groupID: newMessage.groupID, messageList: messageList);
       }
+
+      TencentCloudChat.instance.callbacks.defaultV2TimSDKListener?.handleReceiveNewMessage(newMessage);
     }
   }
 
