@@ -479,7 +479,7 @@ class TencentCloudChatMessageData<T> extends TencentCloudChatDataAB<T> {
     }
     console(logs: "current messageID: ${source.msgID}, audio path: ${source.path}");
 
-    var allowext = ["mp3", 'wav', 'm4a'];
+    var allowext = ["mp3", 'wav', 'm4a', 'aac'];
     if (source.type == AudioPlayType.path) {
       File f = File(source.path);
       var type = source.path.split(".").last.toLowerCase();
