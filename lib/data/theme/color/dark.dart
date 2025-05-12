@@ -22,6 +22,7 @@ class DarkTencentCloudChatColors extends TencentCloudChatThemeColors {
     Color? inputAreaIconColor,
     Color? inputAreaBackground,
     Color? inputFieldBorderColor,
+    Color? inputFieldBackgroundColor,
     Color? messageStatusIconColor,
     Color? othersMessageBubbleBorderColor,
     Color? othersMessageBubbleColor,
@@ -130,6 +131,7 @@ class DarkTencentCloudChatColors extends TencentCloudChatThemeColors {
         _inputAreaBackground = inputAreaBackground ?? const Color(0xFF1F1F1F),
         _inputAreaIconColor = inputAreaIconColor ?? const Color(0xFFE0E0E0),
         _inputFieldBorderColor = inputFieldBorderColor ?? const Color(0xFF444444),
+        _inputFieldBackgroundColor = inputFieldBackgroundColor ?? const Color(0xFF1F1F1F),
         _messageStatusIconColor = messageStatusIconColor ?? const Color(0xFF4C8CFF),
         _othersMessageBubbleBorderColor = othersMessageBubbleBorderColor ?? const Color(0xFF444444),
         _othersMessageBubbleColor = othersMessageBubbleColor ?? const Color(0xFF1F1F1F),
@@ -261,6 +263,7 @@ class DarkTencentCloudChatColors extends TencentCloudChatThemeColors {
   final Color _inputAreaBackground;
   final Color _inputAreaIconColor;
   final Color _inputFieldBorderColor;
+  final Color _inputFieldBackgroundColor;
   final Color _messageStatusIconColor;
   final Color _othersMessageBubbleBorderColor;
   final Color _othersMessageBubbleColor;
@@ -409,6 +412,9 @@ class DarkTencentCloudChatColors extends TencentCloudChatThemeColors {
 
   @override
   Color get inputFieldBorderColor => _inputFieldBorderColor;
+
+  @override
+  Color get inputFieldBackgroundColor => _inputFieldBackgroundColor;
 
   @override
   Color get messageStatusIconColor => _messageStatusIconColor;

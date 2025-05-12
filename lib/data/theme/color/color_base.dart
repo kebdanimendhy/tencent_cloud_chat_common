@@ -67,6 +67,9 @@ abstract class TencentCloudChatThemeColors {
   /// Border color for input fields
   Color get inputFieldBorderColor;
 
+  /// Background color for input fields
+  Color get inputFieldBackgroundColor;
+
   /// Icon color for input area (e.g. microphone button)
   Color get inputAreaIconColor;
 
